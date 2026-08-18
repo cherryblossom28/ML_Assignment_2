@@ -98,7 +98,7 @@ The application is intended to demonstrate the trained models interactively usin
 
 GitHub Repository:
 
-`[https://github.com/cherryblossom28/ML_Assignment_2]`
+https://github.com/cherryblossom28/ML_Assignment_2
 ## Project Structure
 
 ```text
