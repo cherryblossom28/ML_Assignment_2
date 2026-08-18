@@ -1,10 +1,10 @@
- # Heart Disease Classification
+# Heart Disease Classification
 
 ## Introduction
 
 This project is a machine learning classification project for predicting heart disease. The main goal was to train different classification models on the same dataset and compare their performance using different evaluation metrics.
 
-I also created a Streamlit application so that the trained models can be tested through a simple web interface. The application allows a user to upload test data, select a model, and view its performance.
+A Streamlit application was also created to demonstrate the trained models through an interactive web interface. The application allows a user to upload test data, select a model, and view its performance.
 
 ## Problem Statement
 
@@ -12,27 +12,52 @@ Heart disease is a common health problem, and machine learning can be used to id
 
 In this project, five machine learning classification models were implemented and compared:
 
-* Logistic Regression
-* Decision Tree Classifier
-* K-Nearest Neighbors (KNN)
-* Naive Bayes
-* Random Forest
+1. Logistic Regression
+2. Decision Tree Classifier
+3. K-Nearest Neighbors (KNN)
+4. Naive Bayes
+5. Random Forest
 
-The models were evaluated using Accuracy, AUC, Precision, Recall, F1 Score, and Matthews Correlation Coefficient (MCC).
+The models were evaluated using the following metrics:
 
-## Dataset
+* Accuracy
+* AUC
+* Precision
+* Recall
+* F1 Score
+* Matthews Correlation Coefficient (MCC)
 
-The dataset used in this project is a cleaned and merged heart disease dataset stored as:
+## Dataset Description
+
+The dataset used in this project is a cleaned and merged Heart Disease Classification dataset stored as:
 
 `cleaned_merged_heart_dataset.csv`
 
-The target column is named `target` and is used for the classification task.
+The dataset contains **1,888 instances and 13 input features**, with `target` as the classification target. The dataset therefore satisfies the assignment requirement of a minimum of 12 features and 500 instances.
 
-The data was divided into training and testing sets using an 80:20 split. Stratification and `random_state=42` were used while splitting the data. The test portion was saved separately as `test_data.csv` for use in the Streamlit application.
+The input features are:
+
+* `age` - Age of the patient
+* `sex` - Sex of the patient
+* `cp` - Chest pain type
+* `trestbps` - Resting blood pressure
+* `chol` - Serum cholesterol
+* `fbs` - Fasting blood sugar
+* `restecg` - Resting electrocardiographic results
+* `thalachh` - Maximum heart rate achieved
+* `exang` - Exercise-induced angina
+* `oldpeak` - ST depression
+* `slope` - Slope of the peak exercise ST segment
+* `ca` - Number of major vessels
+* `thal` - Thalassemia-related feature
+
+The target column is named `target` and is used for binary classification.
+
+The data was divided into training and testing sets using an **80:20 stratified split** with `random_state=42`. The test portion was saved separately as `test_data.csv` and is used by the Streamlit application.
 
 ## Models Used
 
-The following models were trained on the dataset:
+The following classification models were trained on the dataset:
 
 1. Logistic Regression
 2. Decision Tree Classifier
@@ -58,23 +83,23 @@ The following table shows the results obtained on the test dataset.
 
 ### Logistic Regression
 
-Logistic Regression gave moderate results compared with the other models. Its accuracy was about 72.75%, while the AUC was 83.24%. The recall was reasonably high, but the overall MCC score was much lower than the tree-based models.
+Logistic Regression gave moderate results compared with the other models. It achieved an accuracy of **72.75%** and an AUC of **83.24%**. Its recall was reasonably high at **81.12%**, but its MCC score of **0.4566** was considerably lower than the tree-based models.
 
 ### Decision Tree
 
-The Decision Tree performed very well on the test data. It achieved 97.62% accuracy and an MCC of 0.9523. Its precision, recall, and F1 score were also very high, showing that the model was able to classify the test samples effectively.
+The Decision Tree performed very well on the test data. It achieved **97.62% accuracy**, **97.63% AUC**, and an MCC of **0.9523**. Its precision, recall, and F1 score were also very high, showing strong classification performance on the test dataset.
 
 ### KNN
 
-KNN gave good results, with an accuracy of 91.27% and an AUC of 96.25%. Its performance was better than Logistic Regression and Naive Bayes, but it was still below Decision Tree and Random Forest.
+KNN gave good results, achieving **91.27% accuracy** and **96.25% AUC**. Its performance was better than Logistic Regression and Naive Bayes, but it was below Decision Tree and Random Forest.
 
 ### Naive Bayes
 
-Naive Bayes had the lowest accuracy among the five models at about 70.90%. Its recall was relatively high at 82.14%, but its precision, F1 score, and MCC were comparatively lower.
+Naive Bayes had the lowest accuracy among the five models at **70.90%**. Its recall was relatively high at **82.14%**, but its precision, F1 score, and MCC were comparatively lower.
 
 ### Random Forest
 
-Random Forest gave the best overall performance in this experiment. It achieved 97.88% accuracy, the highest AUC of 99.85%, and the highest MCC of 0.9577. It also had the highest recall and F1 score among the models tested.
+Random Forest gave the best overall performance in this experiment. It achieved **97.88% accuracy**, the highest AUC of **99.85%**, and the highest MCC of **0.9577**. It also achieved the highest recall and F1 score among the models tested.
 
 ## Overall Winner
 
@@ -97,8 +122,8 @@ The application is intended to demonstrate the trained models interactively usin
 ## GitHub Repository
 
 GitHub Repository:
-
 https://github.com/cherryblossom28/ML_Assignment_2
+
 ## Project Structure
 
 ```text
@@ -107,6 +132,7 @@ ML_ASSIGNMENT_2/
 ├── app.py
 ├── requirements.txt
 ├── README.md
+├── cleaned_merged_heart_dataset.csv
 ├── test_data.csv
 ├── model_results.csv
 │
@@ -122,6 +148,8 @@ ML_ASSIGNMENT_2/
 
 ## Conclusion
 
-This project helped compare different classification algorithms on the same heart disease dataset and understand how their performance changes across different evaluation metrics.
+This project compared different classification algorithms on the same heart disease dataset and evaluated their performance using multiple classification metrics.
 
-Among the tested models, Random Forest performed the best overall, while Naive Bayes and Logistic Regression produced lower scores on this test dataset. The Streamlit application provides a simple way to test the models and view their results interactively.
+Among the tested models, **Random Forest performed the best overall**, while Naive Bayes and Logistic Regression produced lower scores on this test dataset.
+
+The Streamlit application provides a simple interactive interface for uploading test data, selecting a trained model, and viewing its evaluation results.
