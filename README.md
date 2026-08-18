@@ -30,8 +30,10 @@ The models were evaluated using the following metrics:
 ## Dataset Description
 
 The dataset used in this project is a cleaned and merged Heart Disease Classification dataset stored as:
-
-`cleaned_merged_heart_dataset.csv`
+Taken from :
+https://www.kaggle.com/datasets/mfarhaannazirkhan/heart-dataset?resource=download&select=cleaned_merged_heart_dataset.csv
+And chose
+`cleaned_merged_heart_dataset.csv` from this dataset
 
 The dataset contains **1,888 instances and 13 input features**, with `target` as the classification target. The dataset therefore satisfies the assignment requirement of a minimum of 12 features and 500 instances.
 
